@@ -1,101 +1,126 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Facebook, Instagram, Linkedin, Mail, Phone } from 'lucide-react';
 import logo from '../assets/logo.png';
-import facebookIcon from '../assets/facebook.png';
-import instagramIcon from '../assets/instagram.png';
-import linkedinIcon from '../assets/linkedin.png';
+
+const explore = [
+  { label: 'About Us',     to: '/about' },
+  { label: 'Our Business', to: '/business' },
+  { label: 'Foundation',   to: '/foundation' },
+  { label: 'Blog',         to: '/blog' },
+  { label: 'Contact us',   to: '/contact' },
+];
+
+const business = [
+  { label: 'Agriculture', to: '/business' },
+  { label: 'Health',      to: '/business' },
+  { label: 'Energy',      to: '/business' },
+];
+
+const company = [
+  { label: 'Help & FAQ',          to: '/contact' },
+  { label: 'Terms & Conditions',  to: '/contact' },
+  { label: 'Privacy Policy',      to: '/contact' },
+];
 
 export default function Footer() {
   const [email, setEmail] = useState('');
+  const [sent,  setSent]  = useState(false);
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setEmail('');
+    if (email) { setSent(true); setEmail(''); }
   };
 
   return (
-    <footer id="contact" className="bg-[#FF3D23] text-white overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-[63px] pt-[76px] pb-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-[119px]">
+    <footer id="contact" className="bg-secondary text-white">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-16 pt-16 pb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[260px_1fr_1fr_300px] gap-10">
 
-          {/* Brand column */}
-          <div className="flex flex-col gap-4 sm:col-span-2 lg:col-span-1">
-            <img src={logo} alt="Ifedichie Group" className="h-[55px] w-auto" />
-            <div className="flex flex-col gap-3">
-              <p className="text-white text-[14px] font-['Lexend',sans-serif]">090-FindCura, 08028232323</p>
-              <p className="text-white text-[14px] font-['Lexend',sans-serif]">support@example.com</p>
+          {/* Brand */}
+          <div className="flex flex-col gap-5">
+            <Link to="/">
+              <img src={logo} alt="Ifedichie Group" className="h-14 w-auto object-contain" />
+            </Link>
+            <div className="flex flex-col gap-2">
+              <a href="tel:08028232323" className="flex items-center gap-2 text-white/90 font-lexend text-sm hover:text-white transition-colors">
+                <Phone size={14} className="shrink-0" /> 090-FindCura, 08028232323
+              </a>
+              <a href="mailto:support@ifedichie.com" className="flex items-center gap-2 text-white/90 font-lexend text-sm hover:text-white transition-colors">
+                <Mail size={14} className="shrink-0" /> support@ifedichie.com
+              </a>
             </div>
-            {/* Social icons */}
-            <div className="flex gap-2.5 items-center">
-              <a href="#" aria-label="Facebook" className="bg-[#011305] p-2 rounded-sm hover:opacity-80 transition-opacity flex items-center justify-center w-8 h-8">
-                <img src={facebookIcon} alt="Facebook" className="w-5 h-5 object-contain" />
-              </a>
-              <a href="#" aria-label="Instagram" className="bg-[#011305] p-2 rounded-sm hover:opacity-80 transition-opacity flex items-center justify-center w-8 h-8">
-                <img src={instagramIcon} alt="Instagram" className="w-5 h-5 object-contain" />
-              </a>
-              <a href="#" aria-label="LinkedIn" className="bg-[#011305] p-2 rounded-sm hover:opacity-80 transition-opacity flex items-center justify-center w-8 h-8">
-                <img src={linkedinIcon} alt="LinkedIn" className="w-5 h-5 object-contain" />
-              </a>
+            <div className="flex gap-2">
+              {[Facebook, Instagram, Linkedin].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  aria-label={['Facebook','Instagram','LinkedIn'][i]}
+                  className="w-8 h-8 bg-[#011305] rounded flex items-center justify-center hover:bg-primary transition-colors"
+                >
+                  <Icon size={16} className="text-white" />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Explore */}
           <div className="flex flex-col gap-3">
-            <p className="text-[#E6ECFE] text-[14px] font-['Lexend',sans-serif] uppercase tracking-wide">Explore</p>
-            <a href="#" className="text-white text-[14px] font-['Lexend',sans-serif] hover:underline">About us</a>
-            <a href="#business" className="text-white text-[14px] font-['Lexend',sans-serif] hover:underline">Our Business</a>
-            <a href="#foundation" className="text-white text-[14px] font-['Lexend',sans-serif] hover:underline">Foundation</a>
-            <a href="#blog" className="text-white text-[14px] font-['Lexend',sans-serif] hover:underline">Blog</a>
-            <a href="#contact" className="text-white text-[14px] font-['Lexend',sans-serif] hover:underline">Contact us</a>
+            <p className="text-[#E6ECFE] font-lexend text-xs font-semibold uppercase tracking-widest">Explore</p>
+            {explore.map(({ label, to }) => (
+              <Link key={label} to={to} className="text-white/90 font-lexend text-sm hover:text-white hover:underline transition-colors">{label}</Link>
+            ))}
           </div>
 
           {/* Our Business */}
           <div className="flex flex-col gap-3">
-            <p className="text-[#E6ECFE] text-[14px] font-['Lexend',sans-serif] uppercase tracking-wide">Our Business</p>
-            <a href="#" className="text-white text-[14px] font-['Lexend',sans-serif] hover:underline">Agriculture</a>
-            <a href="#" className="text-white text-[14px] font-['Lexend',sans-serif] hover:underline">Health</a>
-            <a href="#" className="text-white text-[14px] font-['Lexend',sans-serif] hover:underline">Energy</a>
+            <p className="text-[#E6ECFE] font-lexend text-xs font-semibold uppercase tracking-widest">Our Business</p>
+            {business.map(({ label, to }) => (
+              <Link key={label} to={to} className="text-white/90 font-lexend text-sm hover:text-white hover:underline transition-colors">{label}</Link>
+            ))}
+            <div className="mt-4 flex flex-col gap-3">
+              <p className="text-[#E6ECFE] font-lexend text-xs font-semibold uppercase tracking-widest">Company</p>
+              {company.map(({ label, to }) => (
+                <Link key={label} to={to} className="text-white/90 font-lexend text-sm hover:text-white hover:underline transition-colors">{label}</Link>
+              ))}
+            </div>
           </div>
 
-          {/* Company + Newsletter */}
-          <div className="flex flex-col gap-6 sm:col-span-2 lg:col-span-1">
-            <div className="flex flex-col gap-3">
-              <p className="text-[#E6ECFE] text-[14px] font-['Lexend',sans-serif] uppercase tracking-wide">Company</p>
-              <a href="#" className="text-white text-[14px] font-['Lexend',sans-serif] hover:underline">Help & FAQ</a>
-              <a href="#" className="text-white text-[14px] font-['Lexend',sans-serif] hover:underline">Terms & Conditions</a>
-              <a href="#" className="text-white text-[14px] font-['Lexend',sans-serif] hover:underline">Privacy Policy</a>
+          {/* Newsletter */}
+          <div className="flex flex-col gap-4">
+            <div>
+              <p className="text-[#E6ECFE] font-lexend text-xs font-semibold uppercase tracking-widest">Newsletter</p>
+              <p className="text-white/80 font-lexend text-sm mt-1">Stay updated with our latest news</p>
             </div>
-
-            {/* Newsletter */}
-            <div className="flex flex-col gap-3">
-              <div>
-                <p className="text-[#E6ECFE] text-[14px] font-['Lexend',sans-serif] uppercase tracking-wide">Newsletter</p>
-                <p className="text-[#E6ECFE] text-[12px] font-['Lexend',sans-serif] mt-1">Join our newsletter</p>
-              </div>
-              <form onSubmit={handleNewsletterSubmit} className="bg-white rounded-[8px] flex items-center overflow-hidden h-[40px]">
+            {sent ? (
+              <p className="text-white font-sans font-semibold text-sm py-2">Thanks for subscribing! 🎉</p>
+            ) : (
+              <form onSubmit={handleSubmit} className="bg-white rounded-lg flex overflow-hidden h-11">
                 <input
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-3 text-[14px] text-[#8B8072] outline-none bg-transparent min-w-0"
+                  required
+                  className="flex-1 px-3 text-sm text-neutral-4 outline-none bg-transparent font-sans min-w-0"
                 />
                 <button
                   type="submit"
-                  className="bg-[#FFE0DC] text-[#FF3D23] font-bold text-[14px] px-4 py-2 hover:bg-red-100 transition-colors flex-shrink-0 h-full"
+                  className="bg-surface text-secondary font-sans font-bold text-sm px-4 hover:bg-red-100 transition-colors shrink-0"
                 >
                   Subscribe
                 </button>
               </form>
-            </div>
+            )}
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-4 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[#E6ECFE] text-[12px] font-['Lexend',sans-serif]">© All Rights Reserved.</p>
-          <div className="bg-white rounded-[20px] px-4 py-1 flex items-center gap-2">
-            <span className="text-black text-[10px] font-semibold font-['Poppins',sans-serif]">POWERED BY</span>
-            <span className="text-[#FF3D23] text-[10px] font-bold font-['Poppins',sans-serif]">IFEDICHIE</span>
+        <div className="mt-12 pt-5 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-white/70 font-lexend text-xs text-center">© {new Date().getFullYear()} Ifedichie Group. All Rights Reserved.</p>
+          <div className="bg-white rounded-full px-4 py-1 flex items-center gap-2">
+            <span className="text-black text-[10px] font-semibold font-lexend uppercase tracking-wide">Powered by</span>
+            <span className="text-secondary font-sans font-bold text-[10px]">IFEDICHIE</span>
           </div>
         </div>
       </div>

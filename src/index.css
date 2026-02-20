@@ -3,36 +3,101 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  *, *::before, *::after { box-sizing: border-box; }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Alliance No.1', Georgia, serif;
+    font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
     color: #242E16;
-    background-color: #ffffff;
+    background: #fff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
+
+  img { display: block; }
 }
 
-/* Alliance No.1 font - using system fallback since it's a custom font */
-/* In production, this would be loaded from a custom font service */
-@font-face {
-  font-family: 'Alliance No.1';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Georgia'), local('Times New Roman');
-}
-
+/* ── Scroll-reveal utility ────────────────────────────────────── */
 @layer utilities {
-  .font-alliance {
-    font-family: 'Alliance No.1', Georgia, serif;
-  }
+  .reveal          { opacity: 0; }
+  .reveal.in-view  { animation: fade-up 0.65s ease forwards; }
+
+  .reveal-left         { opacity: 0; }
+  .reveal-left.in-view { animation: slide-right 0.65s ease forwards; }
+
+  .reveal-right         { opacity: 0; }
+  .reveal-right.in-view { animation: slide-left 0.65s ease forwards; }
+
+  .reveal-scale         { opacity: 0; }
+  .reveal-scale.in-view { animation: scale-in 0.55s ease forwards; }
+
+  /* stagger children */
+  .stagger > *:nth-child(1) { animation-delay: 0ms;   }
+  .stagger > *:nth-child(2) { animation-delay: 100ms; }
+  .stagger > *:nth-child(3) { animation-delay: 200ms; }
+  .stagger > *:nth-child(4) { animation-delay: 300ms; }
+  .stagger > *:nth-child(5) { animation-delay: 400ms; }
 }
+
+/* ── Keyframes (duplicated here so @layer utilities can reference) */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-right {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-left {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Smooth image zoom on hover ──────────────────────────────── */
+.img-zoom { overflow: hidden; }
+.img-zoom img { transition: transform 0.5s ease; }
+.img-zoom:hover img { transform: scale(1.05); }
+
+/* ── Button press micro-interaction ─────────────────────────── */
+.btn-press { transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.btn-press:hover  { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,61,35,0.35); }
+.btn-press:active { transform: translateY(0);    box-shadow: none; }
+
+/* ── Nav link underline slide ────────────────────────────────── */
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0; height: 2px;
+  background: #FF3D23;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
+
+/* ── Card hover lift ─────────────────────────────────────────── */
+.card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(36,46,22,0.12);
+}
+
+/* ── Custom scrollbar ────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #8AAF00; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #242E16; }
