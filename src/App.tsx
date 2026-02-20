@@ -18,7 +18,8 @@ function ScrollToTop() {
 }
 
 function AnimationObserver() {
-  useInView();
+  const { pathname } = useLocation();
+  useInView(pathname);   // re-observe every time the route changes
   return null;
 }
 

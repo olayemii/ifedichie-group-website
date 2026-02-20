@@ -1,31 +1,36 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 /**
- * Adds the 'in-view' class to every element that matches `selector`
- * inside `rootRef` once it enters the viewport.
+ * Re-runs whenever `trigger` changes (pass pathname so it re-observes
+ * after every route transition). Sets up an IntersectionObserver that
+ * adds the 'in-view' class to each matching element once it enters the viewport.
  */
-export function useInView(selector = '.reveal, .reveal-left, .reveal-right, .reveal-scale') {
-  const rootRef = useRef<HTMLElement | null>(null);
-
+export function useInView(trigger?: string) {
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            observer.unobserve(entry.target); // fire once
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
+    let observer: IntersectionObserver;
 
-    // Observe every matching element in the document
-    const elements = document.querySelectorAll(selector);
-    elements.forEach((el) => observer.observe(el));
+    // Small delay lets React finish painting the new route's DOM
+    const timerId = setTimeout(() => {
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.08 }
+      );
 
-    return () => observer.disconnect();
-  }, [selector]);
+      document
+        .querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
+        .forEach((el) => observer.observe(el));
+    }, 60);
 
-  return rootRef;
+    return () => {
+      clearTimeout(timerId);
+      observer?.disconnect();
+    };
+  }, [trigger]);
 }
