@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Alliance No.1', Georgia, serif;
+    color: #242E16;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Alliance No.1 font - using system fallback since it's a custom font */
+/* In production, this would be loaded from a custom font service */
+@font-face {
+  font-family: 'Alliance No.1';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Georgia'), local('Times New Roman');
+}
+
+@layer utilities {
+  .font-alliance {
+    font-family: 'Alliance No.1', Georgia, serif;
+  }
+}
