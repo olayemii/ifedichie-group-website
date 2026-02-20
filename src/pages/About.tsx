@@ -1,163 +1,146 @@
-import { Link } from 'react-router-dom';
-import { ArrowUpRight, Target, Eye, Heart, Shield, Sprout, Users } from 'lucide-react';
-import heroBg  from '../assets/hero-bg.png';
-import found1  from '../assets/foundation1.png';
-import found2  from '../assets/foundation2.png';
-import agriImg from '../assets/agriculture.png';
-
-const values = [
-  { icon: Heart,   title: 'Integrity',       desc: 'We hold ourselves to the highest ethical standards in every decision and action.' },
-  { icon: Sprout,  title: 'Sustainability',   desc: 'We invest in solutions that preserve resources for future generations.' },
-  { icon: Users,   title: 'Community First',  desc: 'Every initiative is designed with African communities at its heart.' },
-  { icon: Shield,  title: 'Excellence',       desc: 'We strive for world-class quality across all our sectors.' },
-];
-
-const timeline = [
-  { year: '2005', event: 'Ifedichie Group founded with a vision to transform African agriculture.' },
-  { year: '2010', event: 'Expanded into healthcare, opening first diagnostics centre in Abuja.' },
-  { year: '2015', event: 'Launched the Ifedichie Foundation, reaching 10,000+ beneficiaries.' },
-  { year: '2018', event: 'Entered the energy sector, developing responsible oil & gas operations.' },
-  { year: '2023', event: 'Operations now span 12 states with 50,000+ lives transformed.' },
-];
-
-const team = [
-  { name: 'Dr. Chukwuemeka Ifedichie', role: 'Founder & Group CEO', img: found1 },
-  { name: 'Ngozi Adeyemi',             role: 'Chief Operating Officer', img: found2 },
-  { name: 'Ibrahim Suleiman',          role: 'Head, Agriculture Division', img: agriImg },
-];
+import aboutHero    from '../assets/about-hero.png';
+import ellipse1     from '../assets/about-ellipse1.png';
+import ellipse2     from '../assets/about-ellipse2.png';
+import founderImg   from '../assets/about-founder.png';
 
 export default function About() {
   return (
     <>
-      {/* ═══ PAGE HERO ═══════════════════════════════════════════ */}
-      <section className="relative bg-primary min-h-[360px] flex flex-col items-center justify-center text-center px-5 overflow-hidden py-20">
-        <div className="absolute inset-0">
-          <img src={heroBg} alt="" className="w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-primary/70" />
-        </div>
-        <div className="relative z-10">
-          <span className="inline-block bg-accent/20 text-accent font-sans font-semibold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-4 reveal">
+      {/* ═══ HERO — full-bleed image + overlay title ═════════════ */}
+      <section className="relative w-full h-[360px] sm:h-[440px] lg:h-[520px] overflow-hidden">
+        <img
+          src={aboutHero}
+          alt="About Ifedichie Group"
+          className="w-full h-full object-cover object-center"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/50" />
+        {/* Title */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="font-sans font-extrabold text-white text-4xl sm:text-5xl lg:text-[60px] tracking-tight reveal">
             About Us
-          </span>
-          <h1 className="reveal font-sans font-extrabold text-white text-4xl lg:text-[52px] leading-tight max-w-2xl mx-auto mb-4">
-            Who We Are
           </h1>
-          <p className="reveal text-white/75 font-sans text-[17px] max-w-xl mx-auto leading-relaxed">
-            A diversified African conglomerate driving purposeful growth across agriculture, healthcare, and energy.
+        </div>
+      </section>
+
+      {/* ═══ WHO WE ARE ══════════════════════════════════════════ */}
+      <section className="bg-white py-16 lg:py-24 px-5 lg:px-16">
+        <div className="max-w-[800px] mx-auto text-center">
+          <h2 className="reveal font-sans font-extrabold text-primary text-3xl lg:text-[40px] mb-6">
+            Who we are
+          </h2>
+          <p className="reveal font-sans text-accent text-[16px] lg:text-[18px] italic leading-relaxed">
+            At Ifedichie Group, we are more than just a company, we are a movement with
+            purpose. Founded on the principles of integrity, innovation, and service,
+            our mission is to create sustainable solutions that empower people and
+            transform communities.
           </p>
         </div>
       </section>
 
-      {/* ═══ OUR STORY ═══════════════════════════════════════════ */}
-      <section className="bg-white py-20 lg:py-28 px-5 lg:px-24">
-        <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          <div className="reveal-left">
-            <span className="text-accent font-sans font-semibold text-sm uppercase tracking-wider">Our Story</span>
-            <h2 className="font-sans font-extrabold text-primary text-3xl lg:text-[40px] mt-3 mb-5 leading-tight">
-              Two Decades of Purposeful Impact
-            </h2>
-            <p className="text-neutral-3 font-sans text-base leading-relaxed mb-4">
-              Founded in 2005, the Ifedichie Group began with a simple but powerful belief: that Africa's greatest resource is its people and its land. What started as an agribusiness initiative in the Niger Delta has grown into a diversified conglomerate touching the lives of hundreds of thousands.
-            </p>
-            <p className="text-neutral-3 font-sans text-base leading-relaxed mb-6">
-              Today, we operate across three critical sectors — Agriculture, Healthcare, and Energy — each aligned with the urgent development needs of the African continent.
-            </p>
-            <Link to="/contact" className="btn-press inline-flex items-center gap-2 bg-secondary text-white font-sans font-bold text-sm px-6 py-3 rounded-lg hover:bg-red-600 transition-colors">
-              Partner with us <ArrowUpRight size={16} />
-            </Link>
-          </div>
-          <div className="reveal-right grid grid-cols-2 gap-4">
-            <div className="img-zoom rounded-2xl overflow-hidden aspect-[4/5]">
-              <img src={found1} alt="Our story" className="w-full h-full object-cover" />
-            </div>
-            <div className="img-zoom rounded-2xl overflow-hidden aspect-[4/5] mt-8">
-              <img src={found2} alt="Our journey" className="w-full h-full object-cover" />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ═══ MISSION & VISION ════════════════════════════════════ */}
-      <section className="bg-[#F9FAF5] py-20 px-5 lg:px-24">
-        <div className="max-w-[1240px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
-          <div className="reveal-left bg-white rounded-2xl p-8 border border-accent/20 card-lift">
-            <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5">
-              <Target size={24} className="text-accent" />
+      <section className="bg-white py-10 lg:py-16 px-5 lg:px-16">
+        <div className="max-w-[1100px] mx-auto">
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+
+            {/* Left heading */}
+            <div className="reveal-left lg:w-[220px] shrink-0 lg:pt-8">
+              <h2 className="font-sans font-extrabold text-primary text-2xl lg:text-[32px] leading-tight">
+                Our Mission<br />& Vision
+              </h2>
             </div>
-            <h3 className="font-sans font-extrabold text-primary text-2xl mb-3">Our Mission</h3>
-            <p className="text-neutral-3 font-sans text-base leading-relaxed">
-              To harness Africa's natural and human resources responsibly, creating scalable businesses that generate shared prosperity — for investors, communities, and the continent at large.
-            </p>
-          </div>
-          <div className="reveal-right bg-primary rounded-2xl p-8 card-lift">
-            <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-5">
-              <Eye size={24} className="text-accent" />
+
+            {/* Right — two pill cards */}
+            <div className="flex-1 flex flex-col gap-5">
+
+              {/* Mission pill — light bg */}
+              <div className="reveal flex flex-col sm:flex-row items-center gap-6 bg-[#F5F5EE] rounded-[50px] px-8 py-6 overflow-hidden">
+                <div className="flex-1 text-left sm:pr-4">
+                  <p className="font-sans font-bold text-accent text-sm mb-2">Mission</p>
+                  <p className="font-sans text-primary text-[15px] leading-relaxed">
+                    To empower communities and drive sustainable growth through innovative
+                    solutions in agriculture, health, education, and energy.
+                  </p>
+                </div>
+                <div className="shrink-0 w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-md">
+                  <img src={ellipse1} alt="Mission" className="w-full h-full object-cover" />
+                </div>
+              </div>
+
+              {/* Vision pill — dark bg */}
+              <div className="reveal flex flex-col sm:flex-row items-center gap-6 bg-[#1C2B1A] rounded-[50px] px-8 py-6 overflow-hidden">
+                <div className="shrink-0 w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white/20 shadow-md">
+                  <img src={ellipse2} alt="Vision" className="w-full h-full object-cover" />
+                </div>
+                <div className="flex-1 text-left sm:pl-4">
+                  <p className="font-sans font-bold text-accent text-sm mb-2">Vision</p>
+                  <p className="font-sans text-white/85 text-[15px] leading-relaxed">
+                    To be a leading conglomerate known for transforming industries and
+                    enriching lives through people centred, sustainable solutions.
+                  </p>
+                </div>
+              </div>
+
             </div>
-            <h3 className="font-sans font-extrabold text-white text-2xl mb-3">Our Vision</h3>
-            <p className="text-white/80 font-sans text-base leading-relaxed">
-              To be Africa's most impactful conglomerate — a trusted partner for communities, a benchmark for ethical business, and a bridge between Africa's potential and the world's opportunity.
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ DEI / QUOTE ═════════════════════════════════════════ */}
+      <section className="bg-white py-16 lg:py-24 px-5 lg:px-16">
+        <div className="max-w-[700px] mx-auto text-center">
+          <h2 className="reveal font-sans font-extrabold text-primary text-3xl lg:text-[38px] mb-6">
+            Diversity, Equity &amp; Inclusion
+          </h2>
+          <p className="reveal font-sans text-accent text-[16px] lg:text-[18px] italic leading-relaxed">
+            "At Ifedichie, diversity, equity, and inclusion are not just policies—they are
+            action. We ensure equal access to education, healthcare, and opportunity,
+            so no dream is out of reach."
+          </p>
+        </div>
+      </section>
+
+      {/* ═══ FOUNDER ═════════════════════════════════════════════ */}
+      <section className="relative w-full min-h-[480px] lg:min-h-[540px] overflow-hidden">
+        {/* Dark bg with founder image */}
+        <img
+          src={founderImg}
+          alt="Founder"
+          className="absolute inset-0 w-full h-full object-cover object-top"
+        />
+        <div className="absolute inset-0 bg-primary/75" />
+
+        <div className="relative z-10 max-w-[1100px] mx-auto px-5 lg:px-16 py-16 flex flex-col lg:flex-row gap-10 items-start">
+
+          {/* Portrait card */}
+          <div className="reveal shrink-0 bg-white rounded-2xl overflow-hidden w-[180px] sm:w-[200px]">
+            <div className="aspect-[3/4]">
+              <img src={founderImg} alt="Onyechere Chisom" className="w-full h-full object-cover object-top" />
+            </div>
+            <div className="p-4">
+              <p className="font-sans font-bold text-primary text-sm leading-snug">Onyechere Chisom</p>
+              <p className="font-sans text-neutral-3 text-xs mt-0.5 leading-snug">
+                Founder &amp; President of Ifedichie Group
+              </p>
+            </div>
+          </div>
+
+          {/* Bio text */}
+          <div className="reveal-right flex-1 pt-2">
+            <p className="font-sans text-white/90 text-[15px] lg:text-[16px] leading-relaxed mb-6">
+              Onyechere Chisom, founder and president of Ifedichie Group, is a multifaceted
+              educationist, businessman, and philanthropist. With academic roots in Naval
+              Electromechanical Engineering (Romania) and advanced degrees in Mechanical
+              Engineering and Pharmaceutical Technology (Ireland), his expertise spans
+              continents. As a philanthropist, he has sponsored 200+ students back to school
+              through the Ifedichie Foundation, and remains a beacon of hope for communities
+              across Africa.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ VALUES ═══════════════════════════════════════════════ */}
-      <section className="bg-white py-20 lg:py-28 px-5 lg:px-24">
-        <div className="max-w-[1240px] mx-auto">
-          <div className="text-center mb-14 reveal">
-            <h2 className="font-sans font-extrabold text-primary text-3xl lg:text-[40px] mb-3">Our Core Values</h2>
-            <p className="text-neutral-3 font-sans text-base max-w-md mx-auto">The principles that guide everything we do.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger">
-            {values.map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="reveal card-lift bg-[#F9FAF5] rounded-2xl p-6 text-center flex flex-col items-center gap-4">
-                <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center">
-                  <Icon size={26} className="text-accent" />
-                </div>
-                <h4 className="font-sans font-bold text-primary text-lg">{title}</h4>
-                <p className="text-neutral-3 font-sans text-sm leading-relaxed">{desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ TIMELINE ════════════════════════════════════════════ */}
-      <section className="bg-primary py-20 lg:py-28 px-5 lg:px-24">
-        <div className="max-w-[800px] mx-auto">
-          <div className="text-center mb-14 reveal">
-            <h2 className="font-sans font-extrabold text-white text-3xl lg:text-[40px] mb-3">Our Journey</h2>
-            <p className="text-white/60 font-sans text-base">Milestones that define who we are today.</p>
-          </div>
-          <div className="relative pl-8 border-l-2 border-accent/40 flex flex-col gap-10 stagger">
-            {timeline.map(({ year, event }) => (
-              <div key={year} className="reveal relative">
-                <div className="absolute -left-[41px] w-5 h-5 rounded-full bg-accent border-4 border-primary" />
-                <span className="font-sans font-extrabold text-accent text-sm block mb-1">{year}</span>
-                <p className="font-sans text-white/80 text-base leading-relaxed">{event}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ LEADERSHIP ══════════════════════════════════════════ */}
-      <section className="bg-white py-20 lg:py-28 px-5 lg:px-24">
-        <div className="max-w-[1240px] mx-auto">
-          <div className="text-center mb-14 reveal">
-            <h2 className="font-sans font-extrabold text-primary text-3xl lg:text-[40px] mb-3">Leadership Team</h2>
-            <p className="text-neutral-3 font-sans text-base max-w-md mx-auto">Visionary leaders driving Africa's growth story.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 stagger">
-            {team.map(({ name, role, img }) => (
-              <div key={name} className="reveal card-lift text-center group">
-                <div className="img-zoom rounded-2xl overflow-hidden aspect-square mb-5">
-                  <img src={img} alt={name} className="w-full h-full object-cover" />
-                </div>
-                <h4 className="font-sans font-bold text-primary text-lg">{name}</h4>
-                <p className="font-sans text-accent text-sm font-semibold mt-1">{role}</p>
-              </div>
-            ))}
+            <blockquote className="border-l-4 border-accent pl-5">
+              <p className="font-sans text-white font-semibold italic text-[16px] leading-relaxed">
+                "True success is measured not by profit, but by the impact we create."
+              </p>
+            </blockquote>
           </div>
         </div>
       </section>

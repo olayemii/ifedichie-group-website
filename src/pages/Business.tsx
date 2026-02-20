@@ -1,124 +1,164 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Leaf, HeartPulse, Zap, ChevronRight } from 'lucide-react';
-import heroBg    from '../assets/hero-bg.png';
-import agriImg   from '../assets/agriculture.png';
-import healthImg from '../assets/health.png';
-import energyImg from '../assets/energy.png';
-import found1    from '../assets/foundation1.png';
+import businessHero from '../assets/business-hero.png';
+import agriImg      from '../assets/agriculture.png';
+import healthImg    from '../assets/health.png';
+import energyImg    from '../assets/energy.png';
 
-const sectors = [
+const cards = [
   {
-    icon: Leaf,
-    title: 'Agriculture',
-    tagline: 'Feeding Africa Sustainably',
-    color: 'bg-accent',
-    img: agriImg,
-    desc: 'Our agricultural arm focuses on sustainable palm oil processing, smallholder farmer empowerment, and agro-processing value chains. We work directly with over 2,000 farming families to improve yields, market access, and livelihoods.',
-    highlights: ['Palm oil processing (certified sustainable)', 'Farmer cooperative networks', 'Agro-processing & value addition', 'Export to 5 international markets'],
-    stats: [{ v: '2,000+', l: 'Farmers Supported' }, { v: '40%', l: 'Yield Improvement' }, { v: '5', l: 'Export Markets' }],
+    title: 'Palm Oil Processing',
+    desc:  'Lorem ipsum sit amet',
+    img:   agriImg,
   },
   {
-    icon: HeartPulse,
-    title: 'Health',
-    tagline: 'Reaching the Underserved',
-    color: 'bg-secondary',
-    img: healthImg,
-    desc: 'Ifedichie Health expands access to quality diagnostics, immunisation campaigns, and community health outreach across underserved regions. Our network of clinics and mobile units serves rural and peri-urban populations.',
-    highlights: ['Diagnostics & pathology laboratories', 'Immunisation & vaccination drives', 'Community health worker training', 'Telemedicine & digital health'],
-    stats: [{ v: '100k+', l: 'Patients Seen' }, { v: '24', l: 'Health Facilities' }, { v: '8', l: 'States Covered' }],
+    title: 'Quality Assurance',
+    desc:  'Lorem ipsum sit amet',
+    img:   healthImg,
   },
   {
-    icon: Zap,
-    title: 'Energy',
-    tagline: 'Powering Africa Responsibly',
-    color: 'bg-primary',
-    img: energyImg,
-    desc: 'Our energy division operates responsibly in oil & gas upstream activities while investing in renewables — solar mini-grids, bioenergy, and LPG distribution. We balance commercial viability with environmental accountability.',
-    highlights: ['Upstream oil & gas operations', 'Solar mini-grid deployment', 'LPG distribution network', 'Clean cooking solutions'],
-    stats: [{ v: '15MW', l: 'Solar Capacity' }, { v: '30k', l: 'Homes Powered' }, { v: '12', l: 'Energy Projects' }],
+    title: 'Distribution & Export Services',
+    desc:  'Lorem ipsum sit amet connectetur',
+    img:   energyImg,
   },
 ];
 
 export default function Business() {
   return (
     <>
-      {/* ═══ HERO ═══════════════════════════════════════════════ */}
-      <section className="relative bg-[#2A251F] min-h-[360px] flex flex-col items-center justify-center text-center px-5 overflow-hidden py-20">
-        <div className="absolute inset-0">
-          <img src={heroBg} alt="" className="w-full h-full object-cover opacity-15" />
-          <div className="absolute inset-0 bg-[#2A251F]/80" />
-        </div>
-        <div className="relative z-10">
-          <span className="inline-block bg-accent/20 text-accent font-sans font-semibold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-4 reveal">
+      {/* ═══ HERO — full-bleed image + overlay ═══════════════════ */}
+      <section className="relative w-full h-[380px] sm:h-[460px] lg:h-[540px] overflow-hidden">
+        <img
+          src={businessHero}
+          alt="Our Business — Ifedichie Group"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
+          <h1 className="reveal font-sans font-extrabold text-white text-4xl sm:text-5xl lg:text-[60px] mb-4">
             Our Business
-          </span>
-          <h1 className="reveal font-sans font-extrabold text-white text-4xl lg:text-[52px] leading-tight max-w-2xl mx-auto mb-4">
-            Three Sectors, One Vision
           </h1>
-          <p className="reveal text-white/70 font-sans text-[17px] max-w-xl mx-auto leading-relaxed">
-            Agriculture, Health, and Energy — each industry chosen for its transformative potential across Africa.
+          <p className="reveal font-sans text-white/85 text-[16px] max-w-[560px] leading-relaxed mb-8">
+            We operate across three key industries critical to Africa's future—
+            Agriculture, Health, and Energy. Each business reflects our
+            commitment to sustainability, innovation, and empowerment.
+          </p>
+          <div className="reveal">
+            <Link to="/contact" className="btn-primary text-[16px] px-8 py-3.5">
+              Explore more
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ AGRICULTURE INTRO ═══════════════════════════════════ */}
+      <section className="bg-white py-16 lg:py-24 px-5 lg:px-16">
+        <div className="max-w-[800px] mx-auto text-center">
+          <h2 className="reveal font-sans font-extrabold text-primary text-3xl lg:text-[42px] mb-5">
+            Agriculture
+          </h2>
+          <p className="reveal font-sans text-accent text-[15px] lg:text-[17px] italic leading-relaxed">
+            Palm oil is more than an ingredient.<br />
+            it is our story of sustainability, tradition, and transformation.<br />
+            At Ifediiche Agriculture, we harness the potential of palm oil with respect
+            for its cultural heritage and commitment to sustainable processing.
           </p>
         </div>
       </section>
 
-      {/* ═══ SECTORS ════════════════════════════════════════════ */}
-      {sectors.map(({ icon: Icon, title, tagline, color, img, desc, highlights, stats }, i) => (
-        <section
-          key={title}
-          className={`py-20 lg:py-28 px-5 lg:px-24 ${i % 2 === 1 ? 'bg-[#F9FAF5]' : 'bg-white'}`}
-        >
-          <div className={`max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center ${i % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
-            {/* Text */}
-            <div className={i % 2 === 1 ? 'reveal-right lg:col-start-1' : 'reveal-left'}>
-              <div className={`inline-flex items-center gap-2 ${color} text-white text-xs font-sans font-bold px-3 py-1.5 rounded-full mb-5`}>
-                <Icon size={14} /> {tagline}
-              </div>
-              <h2 className="font-sans font-extrabold text-primary text-3xl lg:text-[40px] mb-4 leading-tight">{title}</h2>
-              <p className="text-neutral-3 font-sans text-base leading-relaxed mb-6">{desc}</p>
-              <ul className="flex flex-col gap-2 mb-8">
-                {highlights.map((h) => (
-                  <li key={h} className="flex items-start gap-2 font-sans text-sm text-primary">
-                    <ChevronRight size={16} className="text-accent shrink-0 mt-0.5" /> {h}
-                  </li>
-                ))}
-              </ul>
-              <div className="flex gap-6 mb-8">
-                {stats.map(({ v, l }) => (
-                  <div key={l}>
-                    <p className="font-sans font-extrabold text-accent text-2xl">{v}</p>
-                    <p className="font-sans text-neutral-3 text-xs mt-1">{l}</p>
-                  </div>
-                ))}
-              </div>
-              <Link to="/contact" className="btn-press inline-flex items-center gap-2 bg-secondary text-white font-sans font-bold text-sm px-6 py-3 rounded-lg hover:bg-red-600 transition-colors">
-                Get involved <ArrowUpRight size={16} />
-              </Link>
-            </div>
-            {/* Image */}
-            <div className={`${i % 2 === 1 ? 'reveal-left lg:col-start-2' : 'reveal-right'} img-zoom rounded-2xl overflow-hidden`}>
-              <img src={img} alt={title} className="w-full aspect-[4/3] object-cover" />
-            </div>
-          </div>
-        </section>
-      ))}
-
-      {/* ═══ CTA ════════════════════════════════════════════════ */}
-      <section className="bg-secondary py-20 px-5 text-center reveal">
-        <div className="max-w-[1240px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="img-zoom rounded-2xl overflow-hidden aspect-[610/300]">
-            <img src={found1} alt="Partnership" className="w-full h-full object-cover" />
-          </div>
-          <div className="flex flex-col justify-center text-left px-4">
-            <h2 className="font-sans font-extrabold text-white text-3xl lg:text-[36px] mb-4 leading-tight">
-              Partner with Ifedichie Group
+      {/* ═══ WHAT WE DO ══════════════════════════════════════════ */}
+      <section className="bg-white pb-16 lg:pb-24 px-5 lg:px-16">
+        <div className="max-w-[1100px] mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="reveal font-sans font-extrabold text-primary text-3xl lg:text-[40px] mb-4">
+              What we do
             </h2>
-            <p className="text-white/80 font-sans text-base leading-relaxed mb-6">
-              We're always looking for strategic partners, investors, and collaborators who share our commitment to sustainable African development.
+            <p className="reveal font-sans text-accent text-[15px] italic leading-relaxed max-w-[500px] mx-auto">
+              We are creating livelihoods, securing food for communities,<br />
+              and contributing to Africa's agricultural resilience.
             </p>
-            <Link to="/contact" className="btn-press inline-flex items-center gap-2 bg-white text-secondary font-sans font-bold text-sm px-6 py-3 rounded-lg hover:bg-surface transition-colors self-start">
-              Contact our team <ArrowUpRight size={16} />
+          </div>
+
+          {/* 3 dark image cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 stagger">
+            {cards.map(({ title, desc, img }) => (
+              <div
+                key={title}
+                className="reveal card-lift bg-[#2A251F] rounded-2xl overflow-hidden"
+              >
+                <div className="img-zoom aspect-[4/3]">
+                  <img src={img} alt={title} className="w-full h-full object-cover" />
+                </div>
+                <div className="px-5 py-4">
+                  <p className="font-sans font-bold text-white text-[15px]">{title}</p>
+                  <p className="font-sans text-white/55 text-xs mt-1">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-10 reveal">
+            <Link to="/contact" className="btn-primary text-[15px] px-8 py-3.5">
+              Become a Distributor
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ═══ HEALTH SECTOR ═══════════════════════════════════════ */}
+      <section className="bg-[#F9FAF5] py-16 lg:py-24 px-5 lg:px-16">
+        <div className="max-w-[800px] mx-auto text-center">
+          <h2 className="reveal font-sans font-extrabold text-primary text-3xl lg:text-[42px] mb-5">
+            Health
+          </h2>
+          <p className="reveal font-sans text-accent text-[15px] lg:text-[17px] italic leading-relaxed mb-10">
+            Expanding access to quality diagnostics, immunisation campaigns,
+            and community health outreach across underserved regions of Africa.
+          </p>
+        </div>
+        <div className="max-w-[1100px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-5 stagger">
+          {['Community Diagnostics', 'Immunisation Drives', 'Telemedicine & Digital Health'].map((item, i) => (
+            <div key={item} className="reveal card-lift bg-white rounded-2xl overflow-hidden border border-gray-100">
+              <div className="img-zoom aspect-[4/3]">
+                <img src={[agriImg, healthImg, energyImg][i]} alt={item} className="w-full h-full object-cover" />
+              </div>
+              <div className="px-5 py-4">
+                <p className="font-sans font-bold text-primary text-[15px]">{item}</p>
+                <p className="font-sans text-neutral-3 text-xs mt-1">Lorem ipsum sit amet</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ═══ ENERGY SECTOR ═══════════════════════════════════════ */}
+      <section className="bg-white py-16 lg:py-24 px-5 lg:px-16">
+        <div className="max-w-[800px] mx-auto text-center">
+          <h2 className="reveal font-sans font-extrabold text-primary text-3xl lg:text-[42px] mb-5">
+            Energy
+          </h2>
+          <p className="reveal font-sans text-accent text-[15px] lg:text-[17px] italic leading-relaxed mb-10">
+            Responsible oil &amp; gas operations paired with investment in solar
+            mini-grids and clean cooking solutions powering Africa's energy future.
+          </p>
+        </div>
+        <div className="max-w-[1100px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-5 stagger">
+          {['Upstream Oil & Gas', 'Solar Mini-Grids', 'LPG Distribution'].map((item, i) => (
+            <div key={item} className="reveal card-lift bg-[#2A251F] rounded-2xl overflow-hidden">
+              <div className="img-zoom aspect-[4/3]">
+                <img src={[energyImg, agriImg, healthImg][i]} alt={item} className="w-full h-full object-cover" />
+              </div>
+              <div className="px-5 py-4">
+                <p className="font-sans font-bold text-white text-[15px]">{item}</p>
+                <p className="font-sans text-white/55 text-xs mt-1">Lorem ipsum sit amet</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-10 reveal">
+          <Link to="/contact" className="btn-primary text-[15px] px-8 py-3.5">
+            Partner with Us
+          </Link>
         </div>
       </section>
     </>

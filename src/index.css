@@ -4,9 +4,7 @@
 
 @layer base {
   *, *::before, *::after { box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
     color: #242E16;
@@ -15,89 +13,119 @@
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
-
   img { display: block; }
 }
 
-/* ── Scroll-reveal utility ────────────────────────────────────── */
+/* ── Scroll-reveal ──────────────────────────────────────────── */
 @layer utilities {
-  .reveal          { opacity: 0; }
-  .reveal.in-view  { animation: fade-up 0.65s ease forwards; }
+  .reveal           { opacity: 0; }
+  .reveal.in-view   { animation: fade-up 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
 
-  .reveal-left         { opacity: 0; }
-  .reveal-left.in-view { animation: slide-right 0.65s ease forwards; }
+  .reveal-left          { opacity: 0; }
+  .reveal-left.in-view  { animation: slide-right 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
 
   .reveal-right         { opacity: 0; }
-  .reveal-right.in-view { animation: slide-left 0.65s ease forwards; }
+  .reveal-right.in-view { animation: slide-left 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
 
   .reveal-scale         { opacity: 0; }
-  .reveal-scale.in-view { animation: scale-in 0.55s ease forwards; }
+  .reveal-scale.in-view { animation: scale-in 0.6s cubic-bezier(0.22,1,0.36,1) forwards; }
 
-  /* stagger children */
+  /* Stagger children delay */
   .stagger > *:nth-child(1) { animation-delay: 0ms;   }
-  .stagger > *:nth-child(2) { animation-delay: 100ms; }
-  .stagger > *:nth-child(3) { animation-delay: 200ms; }
-  .stagger > *:nth-child(4) { animation-delay: 300ms; }
-  .stagger > *:nth-child(5) { animation-delay: 400ms; }
+  .stagger > *:nth-child(2) { animation-delay: 120ms; }
+  .stagger > *:nth-child(3) { animation-delay: 240ms; }
+  .stagger > *:nth-child(4) { animation-delay: 360ms; }
+  .stagger > *:nth-child(5) { animation-delay: 480ms; }
 }
 
-/* ── Keyframes (duplicated here so @layer utilities can reference) */
+/* ── Keyframes ──────────────────────────────────────────────── */
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(32px); }
+  from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 @keyframes slide-right {
-  from { opacity: 0; transform: translateX(-40px); }
+  from { opacity: 0; transform: translateX(-36px); }
   to   { opacity: 1; transform: translateX(0); }
 }
 @keyframes slide-left {
-  from { opacity: 0; transform: translateX(40px); }
+  from { opacity: 0; transform: translateX(36px); }
   to   { opacity: 1; transform: translateX(0); }
 }
 @keyframes scale-in {
-  from { opacity: 0; transform: scale(0.92); }
+  from { opacity: 0; transform: scale(0.94); }
   to   { opacity: 1; transform: scale(1); }
 }
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
 
-/* ── Smooth image zoom on hover ──────────────────────────────── */
+/* ── Image zoom ─────────────────────────────────────────────── */
 .img-zoom { overflow: hidden; }
-.img-zoom img { transition: transform 0.5s ease; }
-.img-zoom:hover img { transform: scale(1.05); }
+.img-zoom img { transition: transform 0.55s cubic-bezier(0.22,1,0.36,1); }
+.img-zoom:hover img { transform: scale(1.06); }
 
-/* ── Button press micro-interaction ─────────────────────────── */
-.btn-press { transition: transform 0.15s ease, box-shadow 0.15s ease; }
-.btn-press:hover  { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,61,35,0.35); }
-.btn-press:active { transform: translateY(0);    box-shadow: none; }
+/* ── Button press ───────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FF3D23;
+  color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary:hover {
+  background: #e83520;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,61,35,0.35);
+}
+.btn-primary:active { transform: translateY(0); box-shadow: none; }
 
-/* ── Nav link underline slide ────────────────────────────────── */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #242E16;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 11px 28px;
+  border-radius: 8px;
+  border: 2px solid rgba(36,46,22,0.25);
+  transition: border-color 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+}
+.btn-outline:hover { border-color: #242E16; background: rgba(36,46,22,0.04); }
+
+/* ── Nav link ───────────────────────────────────────────────── */
 .nav-link {
   position: relative;
-  padding-bottom: 2px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #242E16;
+  transition: color 0.2s ease;
 }
-.nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0; bottom: 0;
-  width: 0; height: 2px;
-  background: #FF3D23;
-  transition: width 0.25s ease;
-}
-.nav-link:hover::after,
-.nav-link.active::after { width: 100%; }
+.nav-link:hover { color: #FF3D23; }
+.nav-link.active { color: #FF3D23; font-weight: 600; }
 
-/* ── Card hover lift ─────────────────────────────────────────── */
-.card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+/* ── Card hover lift ────────────────────────────────────────── */
+.card-lift { transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease; }
 .card-lift:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(36,46,22,0.12);
+  box-shadow: 0 20px 48px rgba(36,46,22,0.14);
 }
 
-/* ── Custom scrollbar ────────────────────────────────────────── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f1f1f1; }
-::-webkit-scrollbar-thumb { background: #8AAF00; border-radius: 3px; }
+/* ── Custom scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f5f5f5; }
+::-webkit-scrollbar-thumb { background: #8AAF00; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #242E16; }
+
+/* ── Hide scrollbar utility ─────────────────────────────────── */
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
