@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q1 2026 Risk Summary</title>
+<style>
+  body { margin:0; padding:0; background-color:#f4f4f0; font-family:Arial,Helvetica,sans-serif; }
+  details summary { cursor:pointer; list-style:none; }
+  details summary::-webkit-details-marker { display:none; }
+  details[open] .arrow { transform:rotate(90deg); }
+  .arrow { display:inline-block; transition:transform 0.2s; font-style:normal; font-size:10px; color:#aaaaaa; margin-left:6px; }
+  table.dro-table { width:100%; border-collapse:collapse; font-size:12px; }
+  table.dro-table th { font-size:10px; font-weight:700; color:#888888; text-transform:uppercase; letter-spacing:0.06em; padding:6px 10px; border-bottom:1px solid #e8e8e4; text-align:left; background:#ffffff; }
+  table.dro-table td { padding:9px 10px; border-bottom:1px solid #f4f4f0; color:#444444; vertical-align:middle; background:#ffffff; }
+  table.dro-table tr:last-child td { border-bottom:none; }
+  table.dro-table tr:hover td { background:#fafaf8; }
+</style>
+</head>
+<body>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4f4f0;">
+<tr><td align="center" style="padding:32px 16px;">
+
+  <table width="620" cellpadding="0" cellspacing="0" border="0" style="max-width:620px;width:100%;">
+
+    <!-- HEADER -->
+    <tr>
+      <td style="background-color:#1a1a1a;border-radius:10px 10px 0 0;padding:28px 32px 24px;">
+        <p style="margin:0 0 6px;font-size:11px;letter-spacing:0.1em;color:#888888;text-transform:uppercase;">Internal · Q1 2026</p>
+        <h1 style="margin:0 0 6px;font-size:24px;font-weight:600;color:#ffffff;line-height:1.2;">Risk Summary Report</h1>
+        <p style="margin:0;font-size:13px;color:#aaaaaa;">PP &nbsp;·&nbsp; EO &nbsp;·&nbsp; PE &nbsp;·&nbsp; UI &nbsp;&nbsp;|&nbsp;&nbsp; January – March 2026</p>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px;">
+          <tr>
+            <td style="font-size:12px;color:#888888;">Issued: <span style="color:#cccccc;">31 March 2026</span></td>
+            <td style="font-size:12px;color:#888888;">Classification: <span style="color:#cccccc;">Internal</span></td>
+            <td style="font-size:12px;color:#888888;">Next review: <span style="color:#cccccc;">30 June 2026</span></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- INTRO -->
+    <tr>
+      <td style="background-color:#ffffff;padding:24px 32px 20px;border-left:1px solid #e8e8e4;border-right:1px solid #e8e8e4;">
+        <p style="margin:0;font-size:14px;color:#444444;line-height:1.7;">Q1 2026 closed <strong style="color:#1a1a1a;">14 of 23 open risks</strong> across PP, EO, PE, and UI — a 61% burn rate. Nine risks remain open entering Q2, with two DRO priority items requiring immediate action. Please review and flag any updates to the risk register by <strong style="color:#1a1a1a;">7 April 2026</strong>.</p>
+      </td>
+    </tr>
+
+    <!-- METRICS -->
+    <tr>
+      <td style="background-color:#ffffff;padding:4px 32px 24px;border-left:1px solid #e8e8e4;border-right:1px solid #e8e8e4;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td width="25%" style="padding-right:8px;">
+              <table width="100%" cellpadding="12" cellspacing="0" border="0" style="background:#f7f7f4;border-radius:8px;">
+                <tr><td>
+                  <p style="margin:0 0 4px;font-size:11px;color:#888888;">Started Q1</p>
+                  <p style="margin:0;font-size:26px;font-weight:700;color:#1a1a1a;line-height:1;">23</p>
+                </td></tr>
+              </table>
+            </td>
+            <td width="25%" style="padding-right:8px;padding-left:8px;">
+              <table width="100%" cellpadding="12" cellspacing="0" border="0" style="background:#f7f7f4;border-radius:8px;">
+                <tr><td>
+                  <p style="margin:0 0 4px;font-size:11px;color:#888888;">Closed</p>
+                  <p style="margin:0;font-size:26px;font-weight:700;color:#3B6D11;line-height:1;">14</p>
+                </td></tr>
+              </table>
+            </td>
+            <td width="25%" style="padding-right:8px;padding-left:8px;">
+              <table width="100%" cellpadding="12" cellspacing="0" border="0" style="background:#f7f7f4;border-radius:8px;">
+                <tr><td>
+                  <p style="margin:0 0 4px;font-size:11px;color:#888888;">Remaining</p>
+                  <p style="margin:0;font-size:26px;font-weight:700;color:#A32D2D;line-height:1;">9</p>
+                </td></tr>
+              </table>
+            </td>
+            <td width="25%" style="padding-left:8px;">
+              <table width="100%" cellpadding="12" cellspacing="0" border="0" style="background:#f7f7f4;border-radius:8px;">
+                <tr><td>
+                  <p style="margin:0 0 4px;font-size:11px;color:#888888;">Burn rate</p>
+                  <p style="margin:0;font-size:26px;font-weight:700;color:#1a1a1a;line-height:1;">61%</p>
+                </td></tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- MONTHLY BURNDOWN -->
+    <tr>
+      <td style="background-color:#ffffff;padding:0 32px 28px;border-left:1px solid #e8e8e4;border-right:1px solid #e8e8e4;">
+        <p style="margin:0 0 14px;font-size:11px;font-weight:700;letter-spacing:0.08em;color:#888888;text-transform:uppercase;border-bottom:1px solid #eeeeea;padding-bottom:8px;">Q1 risk burndown</p>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td style="font-size:12px;font-weight:700;color:#1a1a1a;width:70px;padding-bottom:5px;vertical-align:middle;">January</td>
+            <td style="vertical-align:middle;padding-bottom:5px;">
+              <table width="100%" cellpadding="0" cellspacing="0"><tr><td style="background:#378ADD;height:22px;border-radius:4px;" width="100%"></td></tr></table>
+            </td>
+            <td style="font-size:12px;color:#444;width:72px;text-align:right;padding-bottom:5px;padding-left:10px;vertical-align:middle;">23 → 18</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="padding-bottom:14px;">
+              <table cellpadding="0" cellspacing="0" border="0"><tr>
+                <td style="font-size:10px;color:#A32D2D;padding-right:12px;">High: 6</td>
+                <td style="font-size:10px;color:#854F0B;padding-right:12px;">Medium: 10</td>
+                <td style="font-size:10px;color:#3B6D11;padding-right:16px;">Low: 7</td>
+                <td style="font-size:10px;color:#3B6D11;font-weight:700;">−5 closed</td>
+              </tr></table>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="font-size:12px;font-weight:700;color:#1a1a1a;padding-bottom:5px;vertical-align:middle;">February</td>
+            <td style="vertical-align:middle;padding-bottom:5px;">
+              <table width="100%" cellpadding="0" cellspacing="0"><tr>
+                <td style="background:#5B9FD4;height:22px;border-radius:4px;" width="78%"></td>
+                <td width="22%"></td>
+              </tr></table>
+            </td>
+            <td style="font-size:12px;color:#444;text-align:right;padding-bottom:5px;padding-left:10px;vertical-align:middle;">18 → 13</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="padding-bottom:14px;">
+              <table cellpadding="0" cellspacing="0" border="0"><tr>
+                <td style="font-size:10px;color:#A32D2D;padding-right:12px;">High: 3</td>
+                <td style="font-size:10px;color:#854F0B;padding-right:12px;">Medium: 6</td>
+                <td style="font-size:10px;color:#3B6D11;padding-right:16px;">Low: 4</td>
+                <td style="font-size:10px;color:#3B6D11;font-weight:700;">−5 closed</td>
+              </tr></table>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="font-size:12px;font-weight:700;color:#1a1a1a;padding-bottom:5px;vertical-align:middle;">March</td>
+            <td style="vertical-align:middle;padding-bottom:5px;">
+              <table width="100%" cellpadding="0" cellspacing="0"><tr>
+                <td style="background:#97C459;height:22px;border-radius:4px;" width="39%"></td>
+                <td width="61%"></td>
+              </tr></table>
+            </td>
+            <td style="font-size:12px;color:#3B6D11;font-weight:700;text-align:right;padding-bottom:5px;padding-left:10px;vertical-align:middle;">13 → 9</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <table cellpadding="0" cellspacing="0" border="0"><tr>
+                <td style="font-size:10px;color:#A32D2D;padding-right:12px;">High: 1</td>
+                <td style="font-size:10px;color:#854F0B;padding-right:12px;">Medium: 4</td>
+                <td style="font-size:10px;color:#3B6D11;padding-right:16px;">Low: 4</td>
+                <td style="font-size:10px;color:#3B6D11;font-weight:700;">−4 closed</td>
+              </tr></table>
+            </td>
+            <td></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- DIVIDER -->
+    <tr><td style="background:#ffffff;padding:0 32px;border-left:1px solid #e8e8e4;border-right:1px solid #e8e8e4;"><div style="height:1px;background:#eeeeea;"></div></td></tr>
+
+    <!-- DRO PRIORITY RISKS BY TEAM -->
+    <tr>
+      <td style="background-color:#ffffff;padding:24px 32px;border-left:1px solid #e8e8e4;border-right:1px solid #e8e8e4;">
+        <p style="margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:0.08em;color:#888888;text-transform:uppercase;border-bottom:1px solid #eeeeea;padding-bottom:8px;">DRO priority risks by team</p>
+        <p style="margin:0 0 16px;font-size:12px;color:#888888;">13 priorities across all teams · click a team to expand</p>
+
+        <!-- PP — 7 priorities, 18 tasks -->
+        <details style="margin-bottom:8px;border:1px solid #e8e8e4;border-radius:8px;overflow:hidden;">
+          <summary style="padding:13px 16px;background:#ffffff;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:14px;font-weight:700;color:#1a1a1a;width:32px;">PP</span>
+            <span style="font-size:12px;color:#888888;flex:1;">Portfolio &amp; Planning</span>
+            <span style="font-size:11px;color:#444444;margin-right:4px;"><strong style="color:#1a1a1a;">7</strong> priorities &nbsp;·&nbsp; <strong style="color:#1a1a1a;">18</strong> tasks</span>
+            <span style="display:inline-block;background:#FCEBEB;color:#A32D2D;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;">2 overdue</span>
+            <i class="arrow">&#9654;</i>
+          </summary>
+          <div style="border-top:1px solid #e8e8e4;">
+            <table class="dro-table">
+              <thead>
+                <tr>
+                  <th style="width:34%;">Priority</th>
+                  <th style="width:14%;text-align:center;">Tasks</th>
+                  <th style="width:26%;">Deadline</th>
+                  <th style="width:26%;">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P1</strong> &nbsp;Cyber resilience</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">4</td>
+                  <td>Apr 2026</td>
+                  <td><span style="background:#FCEBEB;color:#A32D2D;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">High · Overdue</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P3</strong> &nbsp;Model risk governance</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">3</td>
+                  <td>Jun 2026</td>
+                  <td><span style="background:#FAEEDA;color:#854F0B;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Medium · In progress</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P5</strong> &nbsp;Data classification</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>May 2026</td>
+                  <td><span style="background:#FAEEDA;color:#854F0B;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Medium · In progress</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P7</strong> &nbsp;Third-party oversight</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">3</td>
+                  <td>Apr 2026</td>
+                  <td><span style="background:#FCEBEB;color:#A32D2D;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">High · Overdue</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P9</strong> &nbsp;Reporting accuracy</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>Jun 2026</td>
+                  <td><span style="background:#FAEEDA;color:#854F0B;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Medium · Not started</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P11</strong> &nbsp;Audit trail completeness</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>Jul 2026</td>
+                  <td><span style="background:#EAF3DE;color:#3B6D11;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Low · On track</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P13</strong> &nbsp;Policy review cycle</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>Sep 2026</td>
+                  <td><span style="background:#EAF3DE;color:#3B6D11;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Low · On track</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <!-- EO — 8 priorities, 21 tasks -->
+        <details style="margin-bottom:8px;border:1px solid #e8e8e4;border-radius:8px;overflow:hidden;">
+          <summary style="padding:13px 16px;background:#ffffff;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:14px;font-weight:700;color:#1a1a1a;width:32px;">EO</span>
+            <span style="font-size:12px;color:#888888;flex:1;">Enterprise Operations</span>
+            <span style="font-size:11px;color:#444444;margin-right:4px;"><strong style="color:#1a1a1a;">8</strong> priorities &nbsp;·&nbsp; <strong style="color:#1a1a1a;">21</strong> tasks</span>
+            <span style="display:inline-block;background:#EAF3DE;color:#3B6D11;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;">No overdue</span>
+            <i class="arrow">&#9654;</i>
+          </summary>
+          <div style="border-top:1px solid #e8e8e4;">
+            <table class="dro-table">
+              <thead>
+                <tr>
+                  <th style="width:34%;">Priority</th>
+                  <th style="width:14%;text-align:center;">Tasks</th>
+                  <th style="width:26%;">Deadline</th>
+                  <th style="width:26%;">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P2</strong> &nbsp;Operational resilience</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">4</td>
+                  <td>Apr 2026</td>
+                  <td><span style="background:#FCEBEB;color:#A32D2D;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">High · In progress</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P4</strong> &nbsp;Change management</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">3</td>
+                  <td>May 2026</td>
+                  <td><span style="background:#FAEEDA;color:#854F0B;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Medium · In progress</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P6</strong> &nbsp;Incident response</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">3</td>
+                  <td>Jun 2026</td>
+                  <td><span style="background:#FAEEDA;color:#854F0B;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Medium · In progress</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P7</strong> &nbsp;Third-party oversight</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>May 2026</td>
+                  <td><span style="background:#FAEEDA;color:#854F0B;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Medium · On track</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P8</strong> &nbsp;Supplier risk review</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">3</td>
+                  <td>Jun 2026</td>
+                  <td><span style="background:#FAEEDA;color:#854F0B;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Medium · On track</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P10</strong> &nbsp;BCP documentation</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>Jul 2026</td>
+                  <td><span style="background:#EAF3DE;color:#3B6D11;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Low · On track</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P12</strong> &nbsp;Staff awareness training</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>Aug 2026</td>
+                  <td><span style="background:#EAF3DE;color:#3B6D11;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Low · On track</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P13</strong> &nbsp;Policy review cycle</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>Sep 2026</td>
+                  <td><span style="background:#EAF3DE;color:#3B6D11;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Low · On track</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <!-- PE — 9 priorities, 26 tasks -->
+        <details style="margin-bottom:8px;border:1px solid #e8e8e4;border-radius:8px;overflow:hidden;">
+          <summary style="padding:13px 16px;background:#ffffff;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:14px;font-weight:700;color:#1a1a1a;width:32px;">PE</span>
+            <span style="font-size:12px;color:#888888;flex:1;">Products &amp; Engineering</span>
+            <span style="font-size:11px;color:#444444;margin-right:4px;"><strong style="color:#1a1a1a;">9</strong> priorities &nbsp;·&nbsp; <strong style="color:#1a1a1a;">26</strong> tasks</span>
+            <span style="display:inline-block;background:#FCEBEB;color:#A32D2D;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;">3 overdue</span>
+            <i class="arrow">&#9654;</i>
+          </summary>
+          <div style="border-top:1px solid #e8e8e4;">
+            <table class="dro-table">
+              <thead>
+                <tr>
+                  <th style="width:34%;">Priority</th>
+                  <th style="width:14%;text-align:center;">Tasks</th>
+                  <th style="width:26%;">Deadline</th>
+                  <th style="width:26%;">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P1</strong> &nbsp;Cyber resilience</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">5</td>
+                  <td>Apr 2026</td>
+                  <td><span style="background:#FCEBEB;color:#A32D2D;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">High · Overdue</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P2</strong> &nbsp;Operational resilience</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">3</td>
+                  <td>Apr 2026</td>
+                  <td><span style="background:#FCEBEB;color:#A32D2D;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">High · Overdue</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P3</strong> &nbsp;Model risk governance</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">4</td>
+                  <td>Jun 2026</td>
+                  <td><span style="background:#FAEEDA;color:#854F0B;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Medium · In progress</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P4</strong> &nbsp;Change management</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">3</td>
+                  <td>May 2026</td>
+                  <td><span style="background:#FCEBEB;color:#A32D2D;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">High · Overdue</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P6</strong> &nbsp;Incident response</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">3</td>
+                  <td>Jun 2026</td>
+                  <td><span style="background:#FAEEDA;color:#854F0B;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Medium · In progress</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P8</strong> &nbsp;Supplier risk review</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>Jun 2026</td>
+                  <td><span style="background:#FAEEDA;color:#854F0B;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Medium · On track</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P9</strong> &nbsp;Reporting accuracy</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>Jul 2026</td>
+                  <td><span style="background:#FAEEDA;color:#854F0B;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Medium · Not started</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P11</strong> &nbsp;Audit trail completeness</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>Jul 2026</td>
+                  <td><span style="background:#EAF3DE;color:#3B6D11;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Low · On track</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P12</strong> &nbsp;Staff awareness training</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>Aug 2026</td>
+                  <td><span style="background:#EAF3DE;color:#3B6D11;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Low · On track</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <!-- UI — 7 priorities, 15 tasks -->
+        <details style="border:1px solid #e8e8e4;border-radius:8px;overflow:hidden;">
+          <summary style="padding:13px 16px;background:#ffffff;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:14px;font-weight:700;color:#1a1a1a;width:32px;">UI</span>
+            <span style="font-size:12px;color:#888888;flex:1;">User Insights</span>
+            <span style="font-size:11px;color:#444444;margin-right:4px;"><strong style="color:#1a1a1a;">7</strong> priorities &nbsp;·&nbsp; <strong style="color:#1a1a1a;">15</strong> tasks</span>
+            <span style="display:inline-block;background:#EAF3DE;color:#3B6D11;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;">No overdue</span>
+            <i class="arrow">&#9654;</i>
+          </summary>
+          <div style="border-top:1px solid #e8e8e4;">
+            <table class="dro-table">
+              <thead>
+                <tr>
+                  <th style="width:34%;">Priority</th>
+                  <th style="width:14%;text-align:center;">Tasks</th>
+                  <th style="width:26%;">Deadline</th>
+                  <th style="width:26%;">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P4</strong> &nbsp;Change management</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>May 2026</td>
+                  <td><span style="background:#FAEEDA;color:#854F0B;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Medium · In progress</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P5</strong> &nbsp;Data classification</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">3</td>
+                  <td>May 2026</td>
+                  <td><span style="background:#FAEEDA;color:#854F0B;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Medium · In progress</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P6</strong> &nbsp;Incident response</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>Jun 2026</td>
+                  <td><span style="background:#FAEEDA;color:#854F0B;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Medium · On track</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P9</strong> &nbsp;Reporting accuracy</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>Jun 2026</td>
+                  <td><span style="background:#FAEEDA;color:#854F0B;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Medium · On track</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P10</strong> &nbsp;BCP documentation</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>Jul 2026</td>
+                  <td><span style="background:#EAF3DE;color:#3B6D11;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Low · On track</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P12</strong> &nbsp;Staff awareness training</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>Aug 2026</td>
+                  <td><span style="background:#EAF3DE;color:#3B6D11;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Low · On track</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#1a1a1a;">P13</strong> &nbsp;Policy review cycle</td>
+                  <td style="text-align:center;font-weight:700;color:#1a1a1a;">2</td>
+                  <td>Sep 2026</td>
+                  <td><span style="background:#EAF3DE;color:#3B6D11;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;">Low · On track</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+      </td>
+    </tr>
+
+    <!-- DIVIDER -->
+    <tr><td style="background:#ffffff;padding:0 32px;border-left:1px solid #e8e8e4;border-right:1px solid #e8e8e4;"><div style="height:1px;background:#eeeeea;"></div></td></tr>
+
+    <!-- TEAM RISK PROFILES -->
+    <tr>
+      <td style="background-color:#ffffff;padding:24px 32px;border-left:1px solid #e8e8e4;border-right:1px solid #e8e8e4;">
+        <p style="margin:0 0 14px;font-size:11px;font-weight:700;letter-spacing:0.08em;color:#888888;text-transform:uppercase;border-bottom:1px solid #eeeeea;padding-bottom:8px;">Risk profiles per team</p>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td width="25%" valign="top" style="padding-right:6px;">
+              <table width="100%" cellpadding="10" cellspacing="0" border="0" style="background:#f7f7f4;border-radius:8px;border:1px solid #e8e8e4;">
+                <tr><td>
+                  <p style="margin:0;font-size:18px;font-weight:700;color:#1a1a1a;">PP</p>
+                  <p style="margin:0 0 10px;font-size:10px;color:#888888;">Portfolio &amp; Planning</p>
+                  <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr><td style="font-size:11px;color:#888888;padding-bottom:4px;">Open</td><td style="font-size:11px;font-weight:700;color:#1a1a1a;text-align:right;padding-bottom:4px;">6</td></tr>
+                    <tr><td style="font-size:11px;color:#A32D2D;padding-bottom:4px;">High</td><td style="font-size:11px;font-weight:700;color:#A32D2D;text-align:right;padding-bottom:4px;">2</td></tr>
+                    <tr><td style="font-size:11px;color:#854F0B;padding-bottom:4px;">Medium</td><td style="font-size:11px;font-weight:700;color:#854F0B;text-align:right;padding-bottom:4px;">3</td></tr>
+                    <tr><td style="font-size:11px;color:#3B6D11;padding-bottom:4px;">Low</td><td style="font-size:11px;font-weight:700;color:#3B6D11;text-align:right;padding-bottom:4px;">1</td></tr>
+                    <tr><td colspan="2" style="border-top:1px solid #e8e8e4;padding-top:6px;font-size:10px;color:#A32D2D;font-weight:700;">1 overdue action</td></tr>
+                  </table>
+                </td></tr>
+              </table>
+            </td>
+            <td width="25%" valign="top" style="padding-right:6px;padding-left:6px;">
+              <table width="100%" cellpadding="10" cellspacing="0" border="0" style="background:#f7f7f4;border-radius:8px;border:1px solid #e8e8e4;">
+                <tr><td>
+                  <p style="margin:0;font-size:18px;font-weight:700;color:#1a1a1a;">EO</p>
+                  <p style="margin:0 0 10px;font-size:10px;color:#888888;">Enterprise Ops</p>
+                  <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr><td style="font-size:11px;color:#888888;padding-bottom:4px;">Open</td><td style="font-size:11px;font-weight:700;color:#1a1a1a;text-align:right;padding-bottom:4px;">5</td></tr>
+                    <tr><td style="font-size:11px;color:#A32D2D;padding-bottom:4px;">High</td><td style="font-size:11px;font-weight:700;color:#A32D2D;text-align:right;padding-bottom:4px;">1</td></tr>
+                    <tr><td style="font-size:11px;color:#854F0B;padding-bottom:4px;">Medium</td><td style="font-size:11px;font-weight:700;color:#854F0B;text-align:right;padding-bottom:4px;">3</td></tr>
+                    <tr><td style="font-size:11px;color:#3B6D11;padding-bottom:4px;">Low</td><td style="font-size:11px;font-weight:700;color:#3B6D11;text-align:right;padding-bottom:4px;">1</td></tr>
+                    <tr><td colspan="2" style="border-top:1px solid #e8e8e4;padding-top:6px;font-size:10px;color:#3B6D11;font-weight:700;">No overdue actions</td></tr>
+                  </table>
+                </td></tr>
+              </table>
+            </td>
+            <td width="25%" valign="top" style="padding-right:6px;padding-left:6px;">
+              <table width="100%" cellpadding="10" cellspacing="0" border="0" style="background:#f7f7f4;border-radius:8px;border:1px solid #e8e8e4;">
+                <tr><td>
+                  <p style="margin:0;font-size:18px;font-weight:700;color:#1a1a1a;">PE</p>
+                  <p style="margin:0 0 10px;font-size:10px;color:#888888;">Products &amp; Eng</p>
+                  <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr><td style="font-size:11px;color:#888888;padding-bottom:4px;">Open</td><td style="font-size:11px;font-weight:700;color:#1a1a1a;text-align:right;padding-bottom:4px;">8</td></tr>
+                    <tr><td style="font-size:11px;color:#A32D2D;padding-bottom:4px;">High</td><td style="font-size:11px;font-weight:700;color:#A32D2D;text-align:right;padding-bottom:4px;">3</td></tr>
+                    <tr><td style="font-size:11px;color:#854F0B;padding-bottom:4px;">Medium</td><td style="font-size:11px;font-weight:700;color:#854F0B;text-align:right;padding-bottom:4px;">4</td></tr>
+                    <tr><td style="font-size:11px;color:#3B6D11;padding-bottom:4px;">Low</td><td style="font-size:11px;font-weight:700;color:#3B6D11;text-align:right;padding-bottom:4px;">1</td></tr>
+                    <tr><td colspan="2" style="border-top:1px solid #e8e8e4;padding-top:6px;font-size:10px;color:#A32D2D;font-weight:700;">2 overdue actions</td></tr>
+                  </table>
+                </td></tr>
+              </table>
+            </td>
+            <td width="25%" valign="top" style="padding-left:6px;">
+              <table width="100%" cellpadding="10" cellspacing="0" border="0" style="background:#f7f7f4;border-radius:8px;border:1px solid #e8e8e4;">
+                <tr><td>
+                  <p style="margin:0;font-size:18px;font-weight:700;color:#1a1a1a;">UI</p>
+                  <p style="margin:0 0 10px;font-size:10px;color:#888888;">User Insights</p>
+                  <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr><td style="font-size:11px;color:#888888;padding-bottom:4px;">Open</td><td style="font-size:11px;font-weight:700;color:#1a1a1a;text-align:right;padding-bottom:4px;">4</td></tr>
+                    <tr><td style="font-size:11px;color:#A32D2D;padding-bottom:4px;">High</td><td style="font-size:11px;font-weight:700;color:#A32D2D;text-align:right;padding-bottom:4px;">1</td></tr>
+                    <tr><td style="font-size:11px;color:#854F0B;padding-bottom:4px;">Medium</td><td style="font-size:11px;font-weight:700;color:#854F0B;text-align:right;padding-bottom:4px;">2</td></tr>
+                    <tr><td style="font-size:11px;color:#3B6D11;padding-bottom:4px;">Low</td><td style="font-size:11px;font-weight:700;color:#3B6D11;text-align:right;padding-bottom:4px;">1</td></tr>
+                    <tr><td colspan="2" style="border-top:1px solid #e8e8e4;padding-top:6px;font-size:10px;color:#3B6D11;font-weight:700;">No overdue actions</td></tr>
+                  </table>
+                </td></tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- NEXT STEPS -->
+    <tr>
+      <td style="background-color:#f7f7f4;padding:20px 32px;border-left:1px solid #e8e8e4;border-right:1px solid #e8e8e4;border-top:1px solid #e8e8e4;">
+        <p style="margin:0 0 6px;font-size:13px;font-weight:700;color:#1a1a1a;">Next steps</p>
+        <p style="margin:0;font-size:13px;color:#555555;line-height:1.6;">Confirm risk register updates by <strong style="color:#1a1a1a;">7 April 2026</strong>. P1 and P2 items marked overdue require immediate escalation. Contact the Risk team with any questions.</p>
+      </td>
+    </tr>
+
+    <!-- FOOTER -->
+    <tr>
+      <td style="background-color:#1a1a1a;border-radius:0 0 10px 10px;padding:16px 32px;">
+        <p style="margin:0;font-size:11px;color:#666666;line-height:1.6;">Internal use only · Q1 2026 risk register snapshot · 31 March 2026 · Next review: 30 June 2026</p>
+      </td>
+    </tr>
+
+  </table>
+</td></tr>
+</table>
+
+</body>
+</html>
